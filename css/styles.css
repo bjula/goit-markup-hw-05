@@ -236,6 +236,7 @@ h1, h2, h3, h4, p, a, ul, li{
     background-color: #188CE8;
 }
 
+
 /*--------------section benefits (преимущества)---------------- */
 
 .visually-hidden {
@@ -726,3 +727,67 @@ h1, h2, h3, h4, p, a, ul, li{
     height: 20px;
     fill: currentColor;
 }
+
+/* ------------- modal window ---------------------- */
+
+.backdrop{
+    position: fixed;
+    top: 0;
+    left: 0;
+    
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.2);
+    opacity: 1;
+
+}
+
+.backdrop.is-hidden{
+    /* opacity: 0;
+    pointer-events: none;
+    visibility: hidden; */
+
+}
+
+.modal{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 528px;
+    min-height: 581px;
+    background-color: var(--main-background-color);
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+
+}
+
+.btn-close{
+    position: absolute;
+    top: 8px;
+    right: 8px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    color: #000000;
+    background-color: transparent;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    box-sizing: border-box;
+  
+
+}
+
+.modal-icon{
+    display: block;
+    width: 18px;
+    height: 18px;
+    color: currentColor;
+
+}
+
+
