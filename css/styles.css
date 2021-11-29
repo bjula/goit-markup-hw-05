@@ -739,26 +739,41 @@ h1, h2, h3, h4, p, a, ul, li{
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.2);
     opacity: 1;
+    visibility: visible;
+    transition: opacity 350ms cubic-bezier(0.4, 0, 0.2, 1), 
+    visibility 350ms cubic-bezier(0.4, 0, 0.2, 1);
 
 }
 
-.backdrop.is-hidden{
-    /* opacity: 0;
+.is-hidden{
+    visibility: hidden;
+    opacity: 0;
     pointer-events: none;
-    visibility: hidden; */
+}
 
+.backdrop.is-hidden .modal{
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.8);
+   
 }
 
 .modal{
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) scale(1);
+    transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1), 
+    opacity 350ms cubic-bezier(0.4, 0, 0.2, 1), 
+    visibility 350ms cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 1;
+    visibility: visible;
 
     width: 528px;
     min-height: 581px;
     background-color: var(--main-background-color);
-    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 
+    0px 1px 1px rgba(0, 0, 0, 0.14), 
+    0px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
 
 }
@@ -778,7 +793,6 @@ h1, h2, h3, h4, p, a, ul, li{
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 50%;
     box-sizing: border-box;
-  
 
 }
 
@@ -786,8 +800,13 @@ h1, h2, h3, h4, p, a, ul, li{
     display: block;
     width: 18px;
     height: 18px;
-    color: currentColor;
+    fill: currentColor;
+    cursor: pointer;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
 }
 
-
+.btn-close:hover .modal-icon, 
+.btn-close:focus .modal-icon{
+    color: var(--accent-color);
+}

@@ -53,7 +53,7 @@
         <!--                 section hero                   -->
         <section class="hero">
             <h1 class="hero-title">Эффективные решения для вашего бизнеса</h1>
-            <button type="button" class="hero-button">Заказать услугу</button>
+            <button data-modal-open type="button" class="hero-button">Заказать услугу</button>
         </section>
 
         <!--        section benefits (преимущества)         -->
@@ -393,9 +393,11 @@
             </div>
         </div>
     </footer>
-    <div class="backdrop is-hidden">
+
+    <!--                   modal window                    -->
+    <div class="backdrop is-hidden" data-modal>
         <div class="modal">
-            <button type="button" class="btn-close">
+            <button data-modal-close type="button" class="btn-close">
                 <svg class="modal-icon">
                     <use href="./images/icons.svg#icon-close-black"></use>
                 </svg>
